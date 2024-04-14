@@ -1,0 +1,22 @@
+---
+CoreConfig:           # Core configuration settings for the run.
+  TC_Interations: 1000  # Number of times to form and teradown the IPsec tunnel, per TC setting.
+  MaxTimeS: 36000      # Maximum time to run the test in seconds.
+  LocalPath: 'C:\Users\James\OneDrive\Documents\GitHub\'      # Local path to copy the logs to.
+  RemotePath: '/var/log/charon.log'   # Remote path to copy the log file from.
+  WiresharkLogs: false        # Capture Wireshark logs from Carol. 
+  WSRemotePath: '/var/log/'   # Remote path to copy the Wireshark logs from.
+  WSLocalPath: "/"            # Local path to copy the Wireshark logs to.
+  MirrorMoon: false           # Do not Mirror the Carol's TC settings to Moon.
+  PrintLevel: 1               # Information Display Level for the run.
+  compose_files: 'C:\Users\James\OneDrive\Documents\GitHub\PostQuantumIKEv2\pq-strongswan_config\docker-compose.yml'  # Docker compose file location
+Carol_TC_Config:    # Carol's Traffic Control settings.
+  Constraint1:      # Constraint 1, this is the adjustable constraint.
+    Type: netem     # Type of constraint, netem for network emulation.
+    Constraint: delay  # Constraint to adjust, delay in this case.  
+    Interface: eth0    # Interface to apply the constraint to.
+    StartRange: 1      # Start range of the constraint (1ms).
+    EndRange: 1      # End range of the constraint (200ms).
+    Units: ms          # Units of the constraint (milliseconds).
+    Steps: 1           # Number of steps to take between the start and end range.
+    AddParams: ''      # Additional parameters to add to the constraint.
