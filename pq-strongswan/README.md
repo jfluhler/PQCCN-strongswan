@@ -67,7 +67,7 @@ VPN client `carol` and VPN gateway `moon` are connected with each other via the 
 strongSwan options can be configured in the `/etc/strongswan.conf` file which in our case contains the startup scripts and a logging directive diverting the debug output to `stderr`. We also define the size of the IP fragments and the maximum IKEv2 packet size which can be quite considerable with some post-quantum Key Exchange Methods.
 
 > NOTE: Modified file for PQCCN-strongswan
-> {style="note"}
+
 
 ```console
 charon {
@@ -171,7 +171,7 @@ pki {
 This is the `swanctl.conf`  connection  configuration file of the client `carol`
 
 > NOTE: Modified file for PQCCN-strongswan
-> {style="note"}
+
 
 
 ```console
@@ -217,7 +217,6 @@ Due to  the `rekey` parameter the `CHILD_SAs` will be periodically rekeyed every
 This is the `swanctl.conf`  connection  configuration file of the gateway `moon`
 
 > NOTE: Modified file for PQCCN-strongswan
-> {style="note"}
 
 ```console
 connections {
