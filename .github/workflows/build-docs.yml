@@ -10,8 +10,8 @@ permissions:
   pages: write
 
 env:
-  INSTANCE: 'Writerside/hi'
-  ARTIFACT: 'webHelpHI2-all.zip'
+  INSTANCE: 'PQCCN-strongswan/PQCCN'
+  ARTIFACT: 'webHelpPQCCN2-all.zip'
   DOCKER_VERSION: '233.14938'
 
 jobs:
