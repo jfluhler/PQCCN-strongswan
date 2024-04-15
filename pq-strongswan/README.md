@@ -68,6 +68,7 @@ strongSwan options can be configured in the `/etc/strongswan.conf` file which in
 
 > NOTE: Modified file for PQCCN-strongswan
 > {style="note"}
+
 ```console
 charon {
    start-scripts {
@@ -169,7 +170,10 @@ pki {
 
 This is the `swanctl.conf`  connection  configuration file of the client `carol`
 
-NOTE: Modified file for PQCCN-strongswan
+> NOTE: Modified file for PQCCN-strongswan
+> {style="note"}
+
+
 ```console
 connections {
    home {
@@ -212,7 +216,9 @@ Due to  the `rekey` parameter the `CHILD_SAs` will be periodically rekeyed every
 
 This is the `swanctl.conf`  connection  configuration file of the gateway `moon`
 
-NOTE: Modified file for PQCCN-strongswan
+> NOTE: Modified file for PQCCN-strongswan
+> {style="note"}
+
 ```console
 connections {
    rw {
