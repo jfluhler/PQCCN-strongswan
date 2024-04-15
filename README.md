@@ -5,9 +5,10 @@ For full documentation refer to the <a target="_blank" rel="noreferrer noopener"
 
 # Quick Setup Guide
 
-This project operates like a wrapper to the
+The data-collection part of this project operates like a wrapper to the
 [strongX509/pq-strongswan](https://github.com/strongX509/docker/tree/master/pq-strongswan">strongX509/pq-strongswan)
-docker container. However, there are some modification from the base repository.
+docker container. However, there are some modification from the pq-strongswan base repository. 
+We want to specially note that the work by Andreas Steffen in making the pq-strongswan repo was of great help in starting this project. The core of efforts are at the core of this project.
 
 ## Before you start
 
