@@ -12,13 +12,13 @@ At what points do various factors of network degradation cause IKEv2 to cease fu
 ## Team
 
 The University of Alabama in Huntsville (UAH) - Team 4 Members:
-- Julien C. Chalkley - https://github.com/Jules2C
-- James D. Fluhler - https://github.com/jfluhler
+- Julien C. Chalkley - [GitHubProfile](https://github.com/Jules2C)
+- James D. Fluhler - [GitHubProfile](https://github.com/jfluhler)
 - Kathryn Heard - 
-- Leslie A. Hurst - https://github.com/Lahurst
-- Evan C. Mitchell - https://github.com/evanmitchell777
+- Leslie A. Hurst - [GitHubProfile](https://github.com/Lahurst)
+- Evan C. Mitchell - [GitHubProfile](https://github.com/evanmitchell777)
 
-- UAH Faculty Advisor: Dr. Bramwell Brizendine - https://github.com/Bw3ll
+- UAH Faculty Advisor: Dr. Bramwell Brizendine - [GitHubProfile](https://github.com/Bw3ll)
 - Problem Mentor: Dr. Bill Layton, NSA
 
 April 26, 2024
@@ -30,7 +30,7 @@ Description:
 The impending presence of quantum computing threatens modern crypto systems, as the means by which most public 
 cryptographic algorithms are secured does not adequately protect against quantum-enabled attacks. Current algorithms 
 cannot keep communications secure in a post-quantum world; so it is now necessary to explore the implementation of 
-quantum-resistant algorithms over our existing network infrastructure (Mailloux et. al., p. 43). But quantum-resistant 
+quantum-resistant algorithms over our existing network infrastructure (Mailloux et al., p. 43). But quantum-resistant 
 algorithms may have a different level of stability than existing algorithms when transmitted over the same infrastructure, 
 thus it is critical for Information Security professionals to understand transmission behavior for post-quantum algorithms. 
 Fortunately, there has been some research done on network-level key exchange protocols. In an article titled 
