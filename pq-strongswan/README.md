@@ -1,6 +1,6 @@
 
 
-This is a branch of pq-strongswan created by [Andreas Steffen][AS] shared under [CC BY 4.0][CC]. 
+This is a branch of pq-strongswan which was created by [Andreas Steffen][AS] and shared under [CC BY 4.0][CC]. 
 The notes below are from the main strongX509/Docker/pq-strongswan readme file, with minor changes to reflect our branches updates to configuration files. 
 Sepcifically the following files were modified:
 - strongswan.conf
