@@ -1,3 +1,4 @@
+#file: noinspection YAMLSchemaValidation
 name: Build documentation
 
 on:
