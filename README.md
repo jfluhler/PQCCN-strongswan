@@ -1,5 +1,5 @@
 # PQCCN-strongswan
-Post-Quantum Cryptography on Constrained Networks
+pq-strongswan wrapper for data collection and analysis. Advancing IKEv2 for the Quantum Age: Challenges in Post-Quantum Cryptography Implementation on Constrained Network
 
 For full documentation refer to the <a target="_blank" rel="noreferrer noopener" href="https://jfluhler.github.io/PQCCN-strongswan/">Project Github Pages</a>
 
