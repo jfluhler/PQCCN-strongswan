@@ -1,4 +1,4 @@
-# pq-strongswan
+
 
 This is a branch of pq-strongswan created by [Andreas Steffen][AS] shared under [CC BY 4.0][CC]. 
 The notes below are from the main strongX509/Docker/pq-strongswan readme file, with minor changes to reflect our branches updates to configuration files. 
@@ -6,6 +6,8 @@ Sepcifically the following files were modified:
 - strongswan.conf
 - moon/swanctl.conf
 - carol/swanctl.conf
+
+# pq-strongswan
 
 Build and run a [strongSwan][STRONGSWAN] 6.0beta Post-Quantum IKEv2 Daemon in a Docker image. The current prototype implementation is based on the two following IETF documents:
 
