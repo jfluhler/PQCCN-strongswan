@@ -10,7 +10,7 @@ permissions:
   pages: write
 
 env:
-  INSTANCE: 'PQCCN-strongswan/PQCCN'
+  INSTANCE: 'Writerside/PQCCN'
   ARTIFACT: 'webHelpPQCCN2-all.zip'
   DOCKER_VERSION: '233.14938'
 
