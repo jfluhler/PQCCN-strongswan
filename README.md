@@ -1,7 +1,7 @@
 # PQCCN-strongswan
 Post-Quantum Cryptography on Constrained Networks
 
-For full documentation refer to the <a href="https://jfluhler.github.io/PQCCN-strongswan/"  target="_blank">Project Github Pages</a>
+For full documentation refer to the <a target="_blank" rel="noreferrer noopener" href="https://jfluhler.github.io/PQCCN-strongswan/">Project Github Pages</a>
 
 # Quick Setup Guide
 
