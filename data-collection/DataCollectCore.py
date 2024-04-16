@@ -33,7 +33,7 @@ from tqdm import trange
 if len(sys.argv) > 1:
     ymlConfig = sys.argv[1]
 else:
-    ymlConfig = "./DataCollect_baseline.yaml"
+    ymlConfig = "./configs/DataCollect_baseline.yaml"
     # ConfigFile = "DataCollect_bandwidth.json"
 
 
@@ -56,34 +56,34 @@ CarolConfig = YAMLConfig.get('Carol_TC_Config')
 MoonConfig = YAMLConfig.get('Moon_TC_Config')
 
 # Define the maximum run time
-if bool(CoreConfig['MaxTimeS']):
+if bool(CoreConfig.get('MaxTimeS')):
     max_run_time = CoreConfig['MaxTimeS']
 else:
     max_run_time = 3600  # 3600 seconds is 1 hour
 
 # Define the print level  
-if bool(CoreConfig['PrintLevel']): 
+if bool(CoreConfig.get('PrintLevel')): 
     pLvl = CoreConfig['PrintLevel']
 else:
     pLvl = 1
 
 # Define the local path to save the log files
-if bool(CoreConfig['LocalPath']):
+if bool(CoreConfig.get('LocalPath')):
     LOG_LocalPath = CoreConfig['LocalPath']
 else:
     LOG_LocalPath = "./"
 
 # Define the remote path of the charon log files
-if bool(CoreConfig['RemotePath']):
+if bool(CoreConfig.get('RemotePath')):
     RemotePath = CoreConfig['RemotePath']
 else:
     RemotePath = "/var/log/charon.log"
 
 # Define the location and name of the Docker Compose File
-if bool(CoreConfig['compose_files']):
+if bool(CoreConfig.get('compose_files')):
     DockerComposeFile = CoreConfig['compose_files']
 else:
-    DockerComposeFile = ["./strongX509/pq-strongswan/docker-compose.yml"]
+    DockerComposeFile = ["../pq-strongswan/docker-compose.yml"]
     
 
 if pLvl > 0:
@@ -344,7 +344,7 @@ if pLvl > 0:
 
 if pLvl > 0:
     print("Total Planned Iterations: " + str(len(C_vals)))
-    print("Planned Values for Carol Constraint " + C_constraint + ": " + str.replace(str(C_vals)," ",",") + "\n\n")
+    print("Planned Values for Carol Constraint " + C_constraint + ": " + str.replace(str(C_vals)," ",",",1) + "\n\n")
 
 #START Constraint 1 Loop
 for i in trange(len(C_vals)):
@@ -374,9 +374,9 @@ for i in trange(len(C_vals)):
 
     # START Single Constraint Function
     # IPSEC LOOP N TIMES
-    if bool(CoreConfig['TC_Interations']):
+    if bool(CoreConfig.get('TC_Interations')):
         ipsec_N = CoreConfig['TC_Interations']
-    elif bool(CoreConfig['TC_Iterations']):
+    elif bool(CoreConfig.get('TC_Iterations')):
         ipsec_N = CoreConfig['TC_Iterations']  #misspelling in original yaml
     else:
         ipsec_N = 1

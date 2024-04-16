@@ -2,14 +2,14 @@
 CoreConfig:           # Core configuration settings for the run.
   TC_Iterations: 10  # Number of times to form and teradown the IPsec tunnel, per TC setting.
   MaxTimeS: 36000      # Maximum time to run the test in seconds.
-  LocalPath: "../"      # Local path to copy the logs to.
+  LocalPath: "../../"      # Local path to copy the logs to.
   RemotePath: "/var/log/charon.log"   # Remote path to copy the log file from.
   WiresharkLogs: false        # Capture Wireshark logs from Carol. 
   WSRemotePath: "/var/log/"   # Remote path to copy the Wireshark logs from.
   WSLocalPath: "/"            # Local path to copy the Wireshark logs to.
   MirrorMoon: false           # Do not Mirror the Carol's TC settings to Moon.
   PrintLevel: 1               # Information Display Level for the run.
-  compose_files: "./pq-strongswan_config/docker-compose.yml"  # Docker compose file location
+  compose_files: "../pq-strongswan/docker-compose.yml"  # Docker compose file location
 Carol_TC_Config:  # Carol's Traffic Control settings.
   Constraint1:        # Constraint 1, this is the adjustable constraint.
     Type: netem         # Type of constraint, netem for network emulation.
