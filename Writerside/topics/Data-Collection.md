@@ -4,7 +4,7 @@
 
   This script is the core data collection script for the PostQuantumIKEv2 project.
   The script is designed to be run on a host machine and will interact with Docker to start and stop containers.
-  The script will also interact with the containers to enable qdisc for tc, and to start strongswan the charon deamon.
+  The script will also interact with the containers to enable qdisc for tc, and to start strongswan the charon daemon.
   The script then invokes a loop to change the tc constraints an inner loop then initiates and terminates
   the IPSEC connection a defined number of times. Once the IPSEC loop is complete the script will update the tc
   constraints and repeat the process. Once the tc constraint range has been covered, script will copy the charon
@@ -47,7 +47,7 @@ The configuration files use a yaml format. The config files has three distinct p
         <code-block lang="yaml">
             ---
             CoreConfig:           # Core configuration settings for the run.
-              TC_Interations: 10  # Number of times to form and teradown the IPsec tunnel, per TC setting.
+              TC_Iterations: 10  # Number of times to form and tear-down the IPsec tunnel, per TC setting.
               MaxTimeS: 36000      # Maximum time to run the test in seconds.
               LocalPath: "~/PQCCN_LOGS/"      # Local path to copy the logs to.
               RemotePath: "/var/log/charon.log"   # Remote path to copy the log file from.
@@ -72,7 +72,7 @@ The configuration files use a yaml format. The config files has three distinct p
         <code-block lang="yaml">
             ---
             CoreConfig:           # Core configuration settings for the run.
-              TC_Interations: 10  # Number of times to form and teradown the IPsec tunnel, per TC setting.
+              TC_Iterations: 10  # Number of times to form and tear-down the IPsec tunnel, per TC setting.
               MaxTimeS: 36000      # Maximum time to run the test in seconds.
               LocalPath: "~/PQCCN_LOGS/"      # Local path to copy the logs to.
               RemotePath: "/var/log/charon.log"   # Remote path to copy the log file from.
@@ -97,7 +97,7 @@ The configuration files use a yaml format. The config files has three distinct p
             <code-block lang="yaml">
                 ---
                 CoreConfig:           # Core configuration settings for the run.
-                  TC_Interations: 10  # Number of times to form and teradown the IPsec tunnel, per TC setting.
+                  TC_Iterations: 10  # Number of times to form and tear-down the IPsec tunnel, per TC setting.
                   MaxTimeS: 72000      # Maximum time to run the test in seconds.
                   LocalPath: 'C:\PQCCN_LOGS\'      # Local path to copy the logs to.
                   RemotePath: '/var/log/charon.log'   # Remote path to copy the log file from.
@@ -122,7 +122,7 @@ The configuration files use a yaml format. The config files has three distinct p
         <code-block lang="yaml">
                 ---
                 CoreConfig:           # Core configuration settings for the run.
-                  TC_Interations: 10  # Number of times to form and teradown the IPsec tunnel, per TC setting.
+                  TC_Iterations: 10  # Number of times to form and tear-down the IPsec tunnel, per TC setting.
                   MaxTimeS: 36000      # Maximum time to run the test in seconds.
                   LocalPath: "../"      # Local path to copy the logs to.
                   RemotePath: "/var/log/charon.log"   # Remote path to copy the log file from.

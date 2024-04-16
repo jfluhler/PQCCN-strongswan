@@ -52,3 +52,5 @@ Let's walk through building the docker container and installing required python 
    > If you are using a virtual env for python. be certain to enter that environment before installing modules.
    
 ***You did it! The required resources are now installed!***
+
+The [Data-Collection](Data-Collection.md) Page will guide you through the next steps to begin collecting data.

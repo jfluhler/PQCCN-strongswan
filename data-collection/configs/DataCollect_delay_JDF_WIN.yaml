@@ -1,6 +1,6 @@
 ---
 CoreConfig:           # Core configuration settings for the run.
-  TC_Interations: 10  # Number of times to form and teradown the IPsec tunnel, per TC setting.
+  TC_Iterations: 10  # Number of times to form and teradown the IPsec tunnel, per TC setting.
   MaxTimeS: 36000      # Maximum time to run the test in seconds.
   LocalPath: 'C:\Users\James\OneDrive\Documents\GitHub\'      # Local path to copy the logs to.
   RemotePath: '/var/log/charon.log'   # Remote path to copy the log file from.

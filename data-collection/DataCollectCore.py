@@ -374,7 +374,13 @@ for i in trange(len(C_vals)):
 
     # START Single Constraint Function
     # IPSEC LOOP N TIMES
-    ipsec_N = CoreConfig['TC_Interations']
+    if bool(CoreConfig['TC_Interations']):
+        ipsec_N = CoreConfig['TC_Interations']
+    elif bool(CoreConfig['TC_Iterations']):
+        ipsec_N = CoreConfig['TC_Iterations']  #misspelling in original yaml
+    else:
+        ipsec_N = 1
+        
     if pLvl > 2:
         print(" -- Begin IPSec Loop -- ")
     for j in trange(ipsec_N):
