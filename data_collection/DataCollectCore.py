@@ -33,7 +33,7 @@ from tqdm import trange
 if len(sys.argv) > 1:
     ymlConfig = sys.argv[1]
 else:
-    ymlConfig = "./data_collection/configs/DataCollect_pktloss_PQ.yaml"
+    ymlConfig = "./data_collection/configs/DataCollect_duplicate_DH.yaml"
     # ConfigFile = "DataCollect_bandwidth.json"
 
 

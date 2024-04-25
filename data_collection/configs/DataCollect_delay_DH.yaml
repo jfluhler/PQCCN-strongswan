@@ -1,0 +1,22 @@
+---
+CoreConfig:           # Core configuration settings for the run.
+  TC_Iterations: 10  # Number of times to form and teradown the IPsec tunnel, per TC setting.
+  MaxTimeS: 7200      # Maximum time to run the test in seconds.
+  LocalPath: "../../baseline_"      # Local path to copy the logs to.
+  RemotePath: "/var/log/charon.log"   # Remote path to copy the log file from.
+  WiresharkLogs: false        # Capture Wireshark logs from Carol. 
+  WSRemotePath: "/var/log/"   # Remote path to copy the Wireshark logs from.
+  WSLocalPath: "/"            # Local path to copy the Wireshark logs to.
+  MirrorMoon: false           # Do not Mirror the Carol's TC settings to Moon.
+  PrintLevel: 2               # Information Display Level for the run.
+  compose_files: "./pq-strongswan/baseline-docker-compose.yml"  # Docker compose file location
+Carol_TC_Config:
+  Constraint1:
+    Type: netem
+    Constraint: delay
+    Interface: eth0
+    StartRange: 50
+    EndRange: 1000
+    Units: "ms"
+    Steps: 26
+    AddParams: ''

@@ -23,6 +23,18 @@ def Ike_State_Stats(df):
     CON = df.loc[(df.loc[:,"NewState"]=="CONNECTING"), :]
 
     Deltas = ''
+    Q3 = np.nan
+    Q1 = np.nan
+    iqr = np.nan
+    max = np.nan
+    min = np.nan
+    range = np.nan
+    mean = np.nan
+    median = np.nan
+    stdDev = np.nan
+    TotalConnections = 0
+    ConnectionPercent = 0
+    Outliers = np.nan
 
     if len(EST) <= len(CON):
         idx = np.linspace(0, len(EST.index)-1, len(EST.index)).astype(int)
@@ -39,47 +51,42 @@ def Ike_State_Stats(df):
     #Deltas = EST.Time.values - CON.Time.values
 
     #df.loc[(df.loc[:,"NewState"]=="ESTABLISHED"), ["Deltas"]] = Deltas
+    if len(EST) <= len(CON):
+        try:
+            len(Deltas)
+            if len(Deltas) > 0:
+                Q3, Q1 = np.percentile(Deltas, [75 ,25])
+                iqr = Q3 - Q1
+                lower = Q1 - 1.5*iqr
+                upper = Q3 + 1.5*iqr
+                
+                # Create arrays of Boolean values indicating the outlier rows
+                upper_array = np.where(Deltas >= upper)[0]
+                lower_array = np.where(Deltas <= lower)[0]
+                drop_array = np.zeros(len(Deltas), dtype=bool)
+                drop_array[upper_array] = True  # Set the upper outlier rows to True
+                drop_array[lower_array] = True  # Set the lower outlier rows to True
+                if sum(drop_array) < len(Deltas)/4:
+                    keep_array = ~drop_array        # Invert the drop_array to get the keep_array
+                else:
+                    keep_array = np.ones(len(Deltas), dtype=bool) # Keep all rows if more than 25% are outliers
+       
 
-    if len(Deltas) > 0:
-        Q3, Q1 = np.percentile(Deltas, [75 ,25])
-        iqr = Q3 - Q1
-        lower = Q1 - 1.5*iqr
-        upper = Q3 + 1.5*iqr
-        
-        # Create arrays of Boolean values indicating the outlier rows
-        upper_array = np.where(Deltas >= upper)[0]
-        lower_array = np.where(Deltas <= lower)[0]
-        drop_array = np.zeros(len(Deltas), dtype=bool)
-        drop_array[upper_array] = True  # Set the upper outlier rows to True
-        drop_array[lower_array] = True  # Set the lower outlier rows to True
-        if sum(drop_array) < len(Deltas)/4:
-            keep_array = ~drop_array        # Invert the drop_array to get the keep_array
-        else:
-            keep_array = np.ones(len(Deltas), dtype=bool) # Keep all rows if more than 25% are outliers
+            max = np.max(Deltas)
+            min = np.min(Deltas)
+            range = max - min
+            mean = np.mean(Deltas[keep_array])  # Only use the non-outlier rows
+            median = np.median(Deltas)
+            stdDev = np.std(Deltas[keep_array])
+            Outliers = sum(drop_array)
+            TotalConnections = len(Deltas)
+        except:
+            TotalConnections = len(EST.index)
+            pass
         
 
-        max = np.max(Deltas)
-        min = np.min(Deltas)
-        range = max - min
-        mean = np.mean(Deltas[keep_array])  # Only use the non-outlier rows
-        median = np.median(Deltas)
-        stdDev = np.std(Deltas[keep_array])
-        TotalConnections = len(Deltas)
         ConnectionPercent = len(EST.index)/(len(CON.index))
-        Outliers = sum(drop_array)
-    else:
-        Q3 = np.nan
-        Q1 = np.nan
-        iqr = np.nan
-        max = np.nan
-        min = np.nan
-        range = np.nan
-        mean = np.nan
-        median = np.nan
-        stdDev = np.nan
-        TotalConnections = 0
-        ConnectionPercent = 0
-        Outliers = np.nan
+
 
 
     LogStats = {'Q3': Q3, 'Q1': Q1, 'IQR': iqr, 'max': max, 'min': min, 'range': range,
