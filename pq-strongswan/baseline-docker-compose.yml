@@ -11,7 +11,7 @@ services:
     stdin_open: true
     tty: true
     volumes:
-      - ./moon:/etc/swanctl
+      - ./moon/DH:/etc/swanctl
       - ./strongswan.conf:/etc/strongswan.conf
     networks:
       internet:
@@ -30,7 +30,7 @@ services:
     stdin_open: true
     tty: true
     volumes:
-      - ./carol:/etc/swanctl
+      - ./carol/DH:/etc/swanctl
       - ./strongswan.conf:/etc/strongswan.conf
     networks:
       internet:

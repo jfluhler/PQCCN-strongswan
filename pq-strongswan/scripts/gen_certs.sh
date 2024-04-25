@@ -17,3 +17,17 @@ pki --issue --cacert caCert.pem --cakey caKey.pem    \
      --type priv --in carolKey.pem --lifetime 1461 \
      --dn "C=CH, O=Cyber, CN=carol@strongswan.org"  \
      --san carol@strongswan.org --outform pem > carolCert.pem
+
+pki --gen --type ecdsa --outform pem > /DH/moonKey.pem
+
+pki --issue --cacert caCert.pem --cakey caKey.pem   \
+    --type priv --in /DH/moonKey.pem --lifetime 1461 \
+    --dn "C=CH, O=Cyber, CN=moon.strongswan.org"    \
+    --san moon.strongswan.org --outform pem > /DH/moonCert.pem
+
+pki --gen --type ecdsa --outform pem > /DH/carolKey.pem
+
+pki --issue --cacert caCert.pem --cakey caKey.pem   \
+    --type priv --in /DH/carolKey.pem --lifetime 1461 \
+    --dn "C=CH, O=Cyber, CN=moon.strongswan.org"    \
+    --san moon.strongswan.org --outform pem > /DH/carolCert.pem

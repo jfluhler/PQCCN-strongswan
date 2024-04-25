@@ -33,7 +33,7 @@ from tqdm import trange
 if len(sys.argv) > 1:
     ymlConfig = sys.argv[1]
 else:
-    ymlConfig = "./configs/DataCollect_baseline.yaml"
+    ymlConfig = "./data_collection/configs/DataCollect_pktloss_PQ.yaml"
     # ConfigFile = "DataCollect_bandwidth.json"
 
 
@@ -398,7 +398,7 @@ for i in trange(len(C_vals)):
 
         try:
             # Send data file
-            docker.execute("carol", shlex.split("ping -c 2 strongswan.moon.com"))
+            docker.execute("carol", shlex.split("ping -c 2 10.1.0.2")) #intranet IP address of moon
         except:
             if pLvl > 1:
                 print("Possible Error sending data in Tunnel ")
