@@ -10,6 +10,7 @@ CoreConfig:           # Core configuration settings for the run.
   MirrorMoon: false           # Do not Mirror the Carol's TC settings to Moon.
   PrintLevel: 2               # Information Display Level for the run.
   compose_files: "./pq-strongswan/baseline-docker-compose.yml"  # Docker compose file location
+  Note: "DH"
 Carol_TC_Config:  # Carol's Traffic Control settings.
   Constraint1:      # Constraint 1, this is the adjustable constraint.
     Type: tbf           # Type of constraint, tbf for token bucket filter.

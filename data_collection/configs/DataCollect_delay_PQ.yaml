@@ -10,6 +10,7 @@ CoreConfig:           # Core configuration settings for the run.
   MirrorMoon: false           # Do not Mirror the Carol's TC settings to Moon.
   PrintLevel: 2               # Information Display Level for the run.
   compose_files: "./pq-strongswan/docker-compose.yml"  # Docker compose file location
+  Note: "PQ"
 Carol_TC_Config:
   Constraint1:
     Type: netem

@@ -97,7 +97,7 @@ def Get_Ike_State_Stats(df):
 
 
 def RunStats(log_dir, FileMode):
-    count = 0;
+    count = 0
     logs = Path(log_dir)
     if FileMode == 'w':
         with open((log_dir + '/runstats.csv'), 'w') as f:
@@ -153,9 +153,10 @@ def RunStats(log_dir, FileMode):
                     IterationTime = res[2]
                 else:
                     IterationTime = ''
-
+                logfilename = line[0].rsplit('/',-1)
+                
                 runstats_temp = ','.join(['FilePath: ' + str(x.parent) + '/', 'Source: ' + str(x.name), \
-                                        'FileName: ' + line[0].removeprefix('./'), 'TotalTime: ' + ts, 'IterationTime: ' + IterationTime,
+                                        'FileName: ' + logfilename[-1], 'TotalTime: ' + ts, 'IterationTime: ' + IterationTime,
                                         'tc_cmd_str: "' + line[2].replace('tc_command: ','') + '"',
                                         tc, variParam, parameters])
                 runstats_temp = runstats_temp.replace(',,',',')

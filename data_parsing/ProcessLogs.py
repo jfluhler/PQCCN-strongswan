@@ -65,6 +65,7 @@ def Log_stats(log_dir,plvl):
         for line in f:
             data.append(line)
             line = line.replace(':',': ')
+            line = line.replace(': /',':/')
             x = line.replace(': \\',':\\').split(',')
             data2 = {}
             for y in x[:-1]:

@@ -11,11 +11,20 @@ def MarkLogs(DF,plvl):
         return search in str(s).lower()
 
     # Search for the string 'al' in all columns
-    mask = DF.apply(lambda x: x.map(lambda s: search_string(s, 'baseline')))
-
+    Bmask = DF.apply(lambda x: x.map(lambda s: search_string(s, 'baseline'.lower())))
+    DHmask = DF.apply(lambda x: x.map(lambda s: search_string(s, 'DH'.lower())))
+    
     # Add column to DataFrame based on the mask
-    DF['Baseline'] = mask.any(axis=1)
-    DF['Algorithm'] = mask.any(axis=1)
+    DF['Baseline'] = Bmask.any(axis=1)
+    DF['Algorithm'] = Bmask.any(axis=1)
+    
+    if sum(Bmask.any(axis=1)==True) == 0:
+        print('No Baseline Found, switching to DH as Baseline')
+        DF['Baseline'] = DHmask.any(axis=1)
+        DF['Algorithm'] = DHmask.any(axis=1)
+        
+
+
 
     DF = DF.replace({'Algorithm': {True: 'Diffie-Helman', False: 'PostQuantum'}})
     
