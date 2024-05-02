@@ -17,7 +17,7 @@ def get_Ike_State(logfile):
 
     return ike_state_dict
 
-def Ike_State_Stats(df):
+def Get_Ike_State_Stats(df):
 
     EST = df.loc[(df.loc[:,"NewState"]=="ESTABLISHED"), :]
     CON = df.loc[(df.loc[:,"NewState"]=="CONNECTING"), :]
